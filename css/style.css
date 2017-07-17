@@ -1,0 +1,8 @@
+input, select, label {
+	display: block;
+}
+
+.calc__section_delim-both {
+	border-left: 1px solid #6d82a1;
+	border-right: 1px solid #6d82a1;
+}
