@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<form action="/order" method="post">
+			<div class="row">
+				<div class="calc__section col-lg-4">
+					<div class="calc__section__label">Автомобиль</div>
+					<select>
+						<option selected>Газель</option>
+						<option>Удл. газель</option>
+						<option>Ман</option>
+					</select>
+					<label for="">
+						время аренды:
+						<input type="number" min="5">
+					</label>
+					<label for="">
+						пропуск в центр:
+						<select>
+							<option selected>Газель</option>
+							<option>Удл. газель</option>
+							<option>Ман</option>
+						</select>
+					</label>
+					от МКАД:
+					<input type="number">
+				</div>
+				<div class="calc__section calc__section_delim-both col-lg-4">
+					<div class="calc__section__label">Грузчики</div>
+					количество
+					<input type="number" min="4">
+					время работы:
+					<input type="number">
+				</div>
+				<div class="calc__section col-lg-4">
+					<div class="calc__section__label">Упаковочные материалы</div>
+					коробка
+					<input type="number">
+					пузырчатая пленка
+					<input type="number">
+					стрейч-пленка
+					<input type="number">
+					картон (лист)
+					<input type="number">
+					скотч
+					<input type="number">
+				</div>
+				<a href="">полный прайс</a>
+			</div>
+			<div class="row">
+				<input type="submit">
+			</div>
+		</form>
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
