@@ -1,8 +1,238 @@
 input, select, label {
-	display: block;
+  display: block;
 }
 
-.calc__section_delim-both {
-	border-left: 1px solid #6d82a1;
-	border-right: 1px solid #6d82a1;
+
+/*.calc__section_delim-left:before, .calc__section_delim-left:after{
+  position: absolute;
+  left: 0;
+  content: '';
+  z-index: 9;
+  border-left: 1px solid #6d82a1;
+  width: 0;
+  height: calc(100%);
+}
+
+.calc__section_delim-left:before {
+  top: -100%;
+}
+
+.calc__section_delim-left:after {
+  top: auto;
+  bottom: 0;
+}*/
+
+/*.calc__section_delim > div:before {
+  content:" ";
+  margin:0 -15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #666666;
+}*/
+
+body {
+  color: #fff;
+  background: #eeeeee;
+}
+
+/*.calc__section_delim-both {
+  border-left: 1px solid #6d82a1;
+  border-right: 1px solid #6d82a1;
+}*/
+.container {
+  /*height: 900px;*/
+  background: #486389;
+}
+
+.calc__form {
+  padding: 15px 30px 60px;
+}
+
+.calc__section__label {
+  font-weight: bold;
+  color: #ecb044;
+  font-size: 1.2em;
+  padding: 15px 0;
+}
+
+.calc__button-order {
+  float: right;
+  font-weight: bold;
+  padding: 12px 16px;
+  background: #ecb044;
+}
+
+.calc__result {
+  position: relative;
+  background: #eee;
+  padding: 5px 40px;
+}
+
+.calc__result__price {
+  position: absolute;
+  background: #fff;
+  left: 60px;
+  bottom: 0;
+  padding: 30px 40px;
+  width: 60%;
+}
+
+.price__label, .price__val {
+  color: #212121;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.price__label {
+  float: left;
+  text-transform: uppercase;
+}
+
+.price__val {
+  float: right;
+}
+
+.calc__section__label:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.calc__section__label__text {
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.calc__section__label__imgframe {
+  position: relative;
+  display: block;
+  float:left;
+  height: 60px;
+  width: 60px;
+  background: #2c4567;
+  border-radius: 50%;
+}
+
+.calc__section__label__imgframe img {
+  position: absolute;
+  height: 30px;
+  top: 25%;
+  left: 30%;
+}
+
+.option {
+  /*margin-top: 130px;*/
+  padding: 15px 15px 5px;
+}
+.option_relative {
+  position: relative;
+}
+/*.option_absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}*/
+.option:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.option__notion {
+  display: block;
+  color: #6a91c5;
+}
+
+.option__input {
+  float: right;
+}
+.option__label {
+  display: block;
+  float: left;
+  font-weight: bold;
+}
+.option__number__val {
+  display: inline-block;
+  padding: 0 10px;
+  font-weight: bold;
+}
+.option__button {
+  background: #559a3b;
+  color: #fff;
+  padding: 0 5px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.option__button__minus::before {
+  content: "\2212";
+}
+.option__button__plus::before {
+  content: "\002b";
+}
+.option__button:focus, .option__button:active, .option__button:active:focus, .option__button:hover,
+.calc__button-order:focus, .calc__button-order:active, .calc__button-order:active:focus, .calc__button-order:hover {
+  outline: none;
+  color: #fff;
+}
+.option__button_hide {
+  visibility: hidden;
+}
+.option__dropdown {
+  position: absolute;
+  /*width: 100%;*/
+  top: 0;
+  right: 0;
+}
+.option__dropdown_fluid {
+  width: 100%;
+}
+.kek::before {
+  display: block;
+  content: "a";
+  visibility: hidden;
+  float: left;
+}
+.option__dropdown_active {
+  background: #fff;
+  color: #212121;
+}
+.option__dropdown__list {
+  /*float:left;*/
+  overflow: auto;
+  padding: 0 10px 0 0;
+  /*padding: 0;*/
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+  list-style: none;
+}
+.option__dropdown_right {
+  float: right;
+}
+.option__dropdown__list__item {
+  padding-bottom: 10px;
+}
+.option__dropdown_active .option__dropdown__list__item:hover, .item_selected:hover {
+  color: #e49900;
+}
+.option__button__dropdown {
+  float: right;
+}
+.option__dropdown__list__item_hide {
+  display: none;
+}
+.caret-up {
+  content: "";
+  border-top: 0;
+  border-bottom: 4px dashed;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
