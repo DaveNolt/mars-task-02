@@ -1,70 +1,156 @@
 <!doctype html>
 <html lang="ru">
 <head>
-	<meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">-->
 </head>
 <body>
-	<div class="container">
-		<form action="/order" method="post">
-			<div class="row">
-				<div class="calc__section col-lg-4">
-					<div class="calc__section__label">Автомобиль</div>
-					<select>
-						<option selected>Газель</option>
-						<option>Удл. газель</option>
-						<option>Ман</option>
-					</select>
-					<label for="">
-						время аренды:
-						<input type="number" min="5">
-					</label>
-					<label for="">
-						пропуск в центр:
-						<select>
-							<option selected>Газель</option>
-							<option>Удл. газель</option>
-							<option>Ман</option>
-						</select>
-					</label>
-					от МКАД:
-					<input type="number">
-				</div>
-				<div class="calc__section calc__section_delim-both col-lg-4">
-					<div class="calc__section__label">Грузчики</div>
-					количество
-					<input type="number" min="4">
-					время работы:
-					<input type="number">
-				</div>
-				<div class="calc__section col-lg-4">
-					<div class="calc__section__label">Упаковочные материалы</div>
-					коробка
-					<input type="number">
-					пузырчатая пленка
-					<input type="number">
-					стрейч-пленка
-					<input type="number">
-					картон (лист)
-					<input type="number">
-					скотч
-					<input type="number">
-				</div>
-				<a href="">полный прайс</a>
-			</div>
-			<div class="row">
-				<input type="submit">
-			</div>
-		</form>
-	</div>
+<div class="container">
+  <!--<form action="/order" method="post">-->
+    <div class="row calc__form">
+      <div class="calc__section col-lg-4">
+        <div class="calc__section__label">
+          <div class="calc__section__label__imgframe">
+            <img src="images/truck.png" alt="">
+          </div>
+          <span class="calc__section__label__text">Автомобиль</span>
+        </div>
+        <div class="option option_relative kek">
+          <div class="option option__dropdown option__dropdown_fluid clearfix">
+            <button class="option__button option__button__dropdown btn"><span class="caret"></span></button>
+            <ul class="option__dropdown__list">
+              <li class="option__dropdown__list__item item_selected" data-price="2250">Газель</li>
+              <li class="option__dropdown__list__item option__dropdown__list__item_hide" data-price="2500">Удл. газель</li>
+              <li class="option__dropdown__list__item option__dropdown__list__item_hide" data-price="0">Авто</li>
+            </ul>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">время аренды:</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus option__button_hide btn"></button>
+            <span data-min="5" data-price="0" data-name="rent" class="option__number__val"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+          <span class="option__notion"><br>не менее 5 часов</span>
+        </div>
+        <div class="option option_relative">
+          <span class="option__label">пропуск в центр:</span>
+          <div class="option option__dropdown option__dropdown_right clearfix">
+            <button class="option__button option__button__dropdown btn"><span class="caret"></span></button>
+            <ul class="option__dropdown__list">
+              <li class="option__dropdown__list__item item_selected" data-price="0" data-name="pass">нет</li>
+              <li class="option__dropdown__list__item option__dropdown__list__item_hide" data-price="500" data-name="pass">да</li>
+            </ul>
+          </div>
+          <span class="option__notion"><br>пределы 3 кольца</span>
+        </div>
+        <div class="option">
+          <span class="option__label">от МКАД:</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-name="mkad" data-price="15"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+          <span class="option__notion"><br>за МКАД 15руб.км</span>
+        </div>
+      </div>
+      <div class="calc__section col-lg-4">
+        <div class="calc__section__label">
+          <div class="calc__section__label__imgframe">
+            <img src="images/face.png" alt="">
+          </div>
+          <span class="calc__section__label__text">Грузчики</span>
+        </div>
+        <div class="option">
+          <span class="option__label">количество:</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-name="worker"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">время работы:</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus option__button_hide btn"></button>
+            <span data-min="4" class="option__number__val" data-name="worktime" data-price="350"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+          <span class="option__notion"><br>не менее 4 часов</span>
+        </div>
+      </div>
+      <div class="calc__section col-lg-4">
+        <div class="calc__section__label">
+          <div class="calc__section__label__imgframe">
+            <img src="images/box.png" alt="">
+          </div>
+          <span class="calc__section__label__text">Упаковочные материалы</span>
+        </div>
+        <div class="option">
+          <span class="option__label">коробка</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-price="100" data-name="pack-box"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">пузырчатая пленка</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-price="150" data-name="pack-bubble"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">стрейч-пленка</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-price="90" data-name="pack-stretch"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">картон (лист)</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-price="190" data-name="pack-carton"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+        <div class="option">
+          <span class="option__label">скотч</span>
+          <div class="option__input">
+            <button class="option__button option__button__minus btn"></button>
+            <span class="option__number__val" data-price="30" data-name="pack-scotch"></span>
+            <button class="option__button option__button__plus btn"></button>
+          </div>
+        </div>
+      </div>
+      <!--<a href="">полный прайс</a>-->
+    </div>
+    <div class="calc__result row">
+        <div class="calc__result__price"><span class="price__label">Итого:</span><span class="price__val"></span></div>
+        <button class="calc__button-order btn">Заказать сейчас</button>
+    </div>
+  <!--</form>-->
+</div>
 
-	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="js/option_number.js"></script>
+<script src="js/option_dropdown.js"></script>
+<script src="js/pricing.js"></script>
+<script src="js/server_queries.js"></script>
 </body>
 
 </html>

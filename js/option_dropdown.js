@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
 	$('.option__dropdown').data('toggle', 'false');
+
 	$('.option__button__dropdown').click(function () {
 		if ($(this).parents('.option__dropdown').data('toggle') == 'false') {
 			activateDropdown.bind(this).call();
@@ -10,6 +12,7 @@ $(document).ready(function () {
 			$(this).parents('.option__dropdown').data('toggle', 'false');
 		}
 	});
+
 	$('.option__dropdown__list__item').click(function () {
 		if ($(this).parents('.option__dropdown').data('toggle') == 'false') {
 			activateDropdown.bind(this).call();
@@ -19,11 +22,19 @@ $(document).ready(function () {
 			if (!$(this).hasClass('item_selected')) {
 				$('.item_selected', $(this).parent()).removeClass('item_selected');
 				$(this).addClass('item_selected');
+				calculatePrice();
 			}
 			deactivateDropdown.bind(this).call();
 			$(this).parents('.option__dropdown').data('toggle', 'false');
 		}
 	});
+
+	// $('.option__dropdown').focusout(function () {
+  //   if ($(this).data('toggle') == 'true') {
+  //     deactivateDropdown.bind($(this).children()).call();
+  //     $(this).data('toggle', 'false');
+  //   }
+  // });
 });
 
 function activateDropdown () {

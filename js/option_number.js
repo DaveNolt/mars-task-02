@@ -1,7 +1,8 @@
 $(document).ready(function () {
-	$(".option__number__val").each((i, el) => {
-		el.innerHTML = el.getAttribute("data-min") ? el.getAttribute("data-min") : 0;
+	$(".option__number__val").each(function (i, el) {
+		el.textContent = el.getAttribute("data-min") ? el.getAttribute("data-min") : 0;
 	});
+	calculatePrice();
 	$(".option__button__minus").click(function () {
 		var num = parseInt($(".option__number__val", $(this).parent()).text());
 		var min = parseInt($(".option__number__val", $(this).parent()).data("min"));
@@ -9,7 +10,7 @@ $(document).ready(function () {
 			$(this).addClass("option__button_hide");
 		};
 		$(".option__number__val", $(this).parent()).text(--num);
-
+		calculatePrice();
 	});
 	$(".option__button__plus").click(function () {
 		var num = parseInt($(".option__number__val", $(this).parent()).text());
@@ -18,5 +19,6 @@ $(document).ready(function () {
 			$(".option__button__minus", $(this).parent()).removeClass("option__button_hide");
 		}
 		$(".option__number__val", $(this).parent()).text(++num);
+		calculatePrice();
 	});
 });

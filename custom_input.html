@@ -1,125 +1,47 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<style>
-			body {
-				color: #fff;
-			}
-			.container {
-				height: 900px;
-				background: #486389;
-			}
-			.option {
-				margin-top: 130px;
-				padding: 15px;
-			}
-
-			.option__number__val {
-				display: inline-block;
-				padding: 0 10px;
-				font-weight: bold;
-			}
-
-			.option__button {
-				background: #559a3b;
-				color: #fff;
-				padding: 0 5px;
-				font-weight: bold;
-				vertical-align: middle;
-			}
-
-			.option__button__minus::before {
-				content: "\2212";
-			}
-
-			.option__button__plus::before {
-				content: "\002b";
-			}
-
-			.option__button:focus, .option__button:active, .option__button:active:focus, .option__button:hover {
-				outline: none;
-				color: #fff;
-			}
-
-			.clearfix:after {
-				content: "";
-				display: table;
-				clear: both;
-			}
-
-			.option__button_hide {
-				visibility: hidden;
-			}
-
-			.option__dropdown_active {
-				background: #fff;
-				color: #212121;
-			}
-
-			.option__dropdown__list {
-				/*float:left;*/
-				overflow: auto;
-				padding: 0;
-				margin: 0;
-				text-align: left;
-				font-weight: bold;
-				list-style: none;
-			}
-
-			.option__dropdown__list__item {
-				padding-bottom: 10px;
-			}
-
-			.option__dropdown_active .option__dropdown__list__item:hover {
-				color: #e49900;
-			}
-
-			.option__button__dropdown {
-				float: right;
-			}
-
-			.option__dropdown__list__item_hide {
-				display: none;
-			}
-
-			.caret-up {
-				content: "";
-    			border-top: 0;
-    			border-bottom: 4px dashed;
-			}
-
-		</style>
-	</head>
-	<body>
-		<div class="container text-center">
-			<div class="option">
-				<button class="option__button option__button__minus option__button_hide btn"></button><span data-min="2" class="option__number__val"></span><button class="option__button option__button__plus btn"></button>
-			</div>
-			<div class="option">
-				<button class="option__button option__button__minus option__button_hide btn"></button><span data-min="5" class="option__number__val"></span><button class="option__button option__button__plus btn"></button>
-			</div>
-			<div class="option">
-				<button class="option__button option__button__minus btn"></button><span class="option__number__val"></span><button class="option__button option__button__plus btn"></button>
-			</div>
-			<div class="option option__dropdown clearfix">
-				<span class="option__dropdown__selected"></span><button class="option__button option__button__dropdown btn"><span class="caret"></span></button>
-				<ul class="option__dropdown__list">
-					<li class="option__dropdown__list__item item_selected">Газель</li>
-					<li class="option__dropdown__list__item option__dropdown__list__item_hide">Удл. газель</li>
-					<li class="option__dropdown__list__item option__dropdown__list__item_hide">Ман</li>
-				</ul>
-			</div>
-		</div>
-		<!-- Scripts -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="js/option_number.js"></script>
-		<script src="js/option_dropdown.js"></script>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+<div class="container text-center">
+  <div class="option">
+    <button class="option__button option__button__minus option__button_hide btn"></button>
+    <span data-min="2" class="option__number__val"></span>
+    <button class="option__button option__button__plus btn"></button>
+  </div>
+  <div class="option">
+    <button class="option__button option__button__minus option__button_hide btn"></button>
+    <span data-min="5" class="option__number__val"></span>
+    <button class="option__button option__button__plus btn"></button>
+  </div>
+  <div class="option">
+    <button class="option__button option__button__minus btn"></button>
+    <span class="option__number__val"></span>
+    <button class="option__button option__button__plus btn"></button>
+  </div>
+  <div class="option option__dropdown clearfix">
+    <span class="option__dropdown__selected"></span>
+    <button class="option__button option__button__dropdown btn"><span class="caret"></span></button>
+    <ul class="option__dropdown__list">
+      <li class="option__dropdown__list__item item_selected">Газель</li>
+      <li class="option__dropdown__list__item option__dropdown__list__item_hide">Удл. газель</li>
+      <li class="option__dropdown__list__item option__dropdown__list__item_hide">Ман</li>
+    </ul>
+  </div>
+</div>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="js/option_number.js"></script>
+<script src="js/option_dropdown.js"></script>
+</body>
 </html>
